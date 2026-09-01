@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      font-family: sans-serif;
+      width: 240px;
+      padding: 14px 16px;
+      margin: 0;
+      background: #0f172a;
+      color: #f1f5f9;
+    }
+    h2 { margin: 0 0 10px; font-size: 13px; color: #64748b; letter-spacing: 0.08em; }
+    .row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .dot {
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: #ef4444;
+      flex-shrink: 0;
+    }
+    .dot.on { background: #22c55e; }
+    .conn-label { font-size: 14px; font-weight: 600; }
+    .conn-label.on { color: #22c55e; }
+    .conn-label.off { color: #ef4444; }
+    .divider { border: none; border-top: 1px solid #1e293b; margin: 8px 0; }
+    .stat { display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 5px; }
+    .stat-label { color: #64748b; }
+    .stat-value { color: #cbd5e1; font-weight: 500; max-width: 140px; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .stat-value.warn { color: #f59e0b; }
+    .hint { font-size: 10px; color: #475569; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <h2>PERSIA BRIDGE</h2>
+  <div class="row">
+    <div class="dot" id="dot"></div>
+    <span class="conn-label" id="conn-label">Checking...</span>
+  </div>
+  <hr class="divider">
+  <div class="stat">
+    <span class="stat-label">Last action</span>
+    <span class="stat-value" id="last-action">—</span>
+  </div>
+  <div class="stat">
+    <span class="stat-label">Last site</span>
+    <span class="stat-value" id="last-site">—</span>
+  </div>
+  <div class="stat">
+    <span class="stat-label">Queue</span>
+    <span class="stat-value" id="queue">0</span>
+  </div>
+  <div class="stat">
+    <span class="stat-label">Cooldown</span>
+    <span class="stat-value" id="cooldown">—</span>
+  </div>
+  <p class="hint" id="hint"></p>
+  <script src="popup.js"></script>
+</body>
+</html>

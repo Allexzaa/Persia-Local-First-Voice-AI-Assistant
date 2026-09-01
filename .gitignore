@@ -1,0 +1,42 @@
+# Project-private memory, editor settings, and internal documentation
+.claude/
+.vscode/
+CLAUDE.md
+OBSIDIAN_MEMORY_GUIDE.md
+INIT_PROMPT.md
+PROJECT_INIT.md
+Build_Plan.md
+Docs/
+presentation/
+PRESENTATION*.md
+presentation_notes.txt
+index-v1.html
+
+# Local credentials and environment configuration
+.env
+.env.*
+!.env.example
+
+# Private runtime application and account data
+voice-agent/
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Local environments and generated Python files
+**/.venv/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Fine-tuning data and generated model artifacts
+fine-tune/data/
+fine-tune/output/
+fine-tune/config/
+fine-tune/Modelfile_persia
+fine-tune/TRAINING_DATA_MAP.md
+fine-tune/scripts/gen_cat*.py
+
+# Public versions of these files should be scrubbed before they are added
+README.md
