@@ -1,10 +1,6 @@
-<table align="center" width="100%" cellpadding="18" cellspacing="0" bgcolor="#3E5A73">
-  <tr>
-    <td align="center">
-      <img src="assets/logo.png" alt="Persia logo" width="220">
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <img src="assets/persia-banner.png" alt="Persia logo" width="100%">
+</p>
 
 # Persia - Local-First Voice AI Assistant
 
