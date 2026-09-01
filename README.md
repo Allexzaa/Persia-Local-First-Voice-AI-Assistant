@@ -1,5 +1,6 @@
 <p align="center">
   <img src="assets/logo.png" alt="Persia logo" width="220">
+  <img src="assets/material-design-logo-mono.svg" alt="Material Design logo" width="36">
 </p>
 
 # Persia - Local-First Voice AI Assistant
@@ -8,7 +9,8 @@ Persia is a local-first voice assistant designed to turn natural-language reques
 
 > **Public repository note:** This repository is a public engineering snapshot. The private voice-agent runtime, credentials, runtime memory, training data, model weights, generated artifacts, and internal planning documents are intentionally excluded. The README documents the full system, while the published code focuses on the browser bridge and fine-tuning utilities.
 
-## Why This Project
+<details>
+<summary><strong>Why This Project</strong></summary>
 
 Persia explores the engineering problems that appear when an AI assistant must operate on real user data:
 
@@ -20,7 +22,10 @@ Persia explores the engineering problems that appear when an AI assistant must o
 - Preserving user-stated facts separately from model-generated inferences
 - Exposing progress and session state through a local web interface
 
-## System Architecture
+</details>
+
+<details>
+<summary><strong>System Architecture</strong></summary>
 
 ```text
 Microphone
@@ -37,7 +42,10 @@ Microphone
 
 The core runtime uses Python, Ollama, Faster-Whisper, Kokoro TTS, Silero VAD, SQLite, and FastAPI. Inference, audio processing, and memory storage run locally. Optional integrations contact third-party services only when explicitly configured by the operator.
 
-## Capabilities
+</details>
+
+<details>
+<summary><strong>Capabilities</strong></summary>
 
 | Area | Examples | Design focus |
 | --- | --- | --- |
@@ -54,7 +62,10 @@ The core runtime uses Python, Ollama, Faster-Whisper, Kokoro TTS, Silero VAD, SQ
 
 The private runtime currently defines more than 50 structured tools. Tool availability is narrowed by request category so the model does not compete against the entire catalog on every turn.
 
-## Voice and Agent Pipeline
+</details>
+
+<details>
+<summary><strong>Voice and Agent Pipeline</strong></summary>
 
 - **Wake word:** Custom `Hey Persia` classifier with recorded five-fold cross-validation F1 of `0.927 +/- 0.072`
 - **VAD:** Silero VAD with a rolling pre-buffer for capturing the beginning of speech
@@ -64,7 +75,10 @@ The private runtime currently defines more than 50 structured tools. Tool availa
 - **TTS:** Kokoro ONNX with sentence-level streaming and interruption handling
 - **Interfaces:** Voice, Telegram, Slack, and a local FastAPI/WebSocket dashboard
 
-## Safety and Reliability
+</details>
+
+<details>
+<summary><strong>Safety and Reliability</strong></summary>
 
 Persia treats tool execution as an engineering boundary rather than allowing the model to directly control the operating system or external services.
 
@@ -77,7 +91,10 @@ Persia treats tool execution as an engineering boundary rather than allowing the
 - User-stated facts are preserved as authoritative; inferred facts do not silently overwrite them.
 - Errors are returned to the loop so the assistant can report failures instead of claiming success.
 
-## Evaluation Evidence
+</details>
+
+<details>
+<summary><strong>Evaluation Evidence</strong></summary>
 
 The project includes recorded evaluation work in the private development materials. The most concrete results currently documented are:
 
@@ -90,7 +107,10 @@ The project includes recorded evaluation work in the private development materia
 
 These figures are project-level development results, not a claim of universal production performance. The repository deliberately does not publish private datasets, model weights, credentials, or personal runtime data.
 
-## Public Repository Contents
+</details>
+
+<details>
+<summary><strong>Public Repository Contents</strong></summary>
 
 ```text
 Speaking-AI/
@@ -110,7 +130,10 @@ Speaking-AI/
 
 The following are intentionally not part of the public snapshot: `voice-agent/`, `.env` files, OAuth credentials, tokens, memory databases, virtual environments, model outputs, training datasets, personalized prompts, internal documentation, and presentation materials.
 
-## Run the Published Browser Bridge
+</details>
+
+<details>
+<summary><strong>Run the Published Browser Bridge</strong></summary>
 
 The browser bridge is a local FastAPI service that connects the assistant to a Chrome extension over WebSocket.
 
@@ -130,7 +153,10 @@ python browser-bridge/test_job_details.py
 
 These tests require an active browser session and the target site to be available. They are integration smoke tests, not a fully offline test suite.
 
-## Fine-Tuning Workflow
+</details>
+
+<details>
+<summary><strong>Fine-Tuning Workflow</strong></summary>
 
 The published utilities describe the training workflow for a local Llama-based tool-calling model:
 
@@ -141,7 +167,10 @@ The published utilities describe the training workflow for a local Llama-based t
 
 Training data, adapters, merged weights, and GGUF files are excluded because they are large, personalized, and not required to inspect the training code.
 
-## Configuration and Privacy
+</details>
+
+<details>
+<summary><strong>Configuration and Privacy</strong></summary>
 
 Do not commit credentials or local runtime state. Configure integrations through environment variables or local configuration files that remain outside version control. This includes:
 
@@ -153,7 +182,10 @@ Do not commit credentials or local runtime state. Configure integrations through
 
 Before publishing a clone of this project, inspect the staged file list and run a secret scanner. If a credential has ever been exposed, revoke it and issue a replacement even if the file was later ignored.
 
-## Current Scope and Limitations
+</details>
+
+<details>
+<summary><strong>Current Scope and Limitations</strong></summary>
 
 - The public snapshot is not a one-command installation of the complete voice assistant because the runtime and private configuration are excluded.
 - External integrations require their own accounts, credentials, permissions, and service availability.
@@ -161,6 +193,13 @@ Before publishing a clone of this project, inspect the staged file list and run 
 - OCR quality depends on scan resolution, document quality, and layout complexity.
 - The evaluation results above are development measurements; broader held-out and production-scale evaluation remains future work.
 
-## License and Ownership
+</details>
+
+<details>
+<summary><strong>License and Ownership</strong></summary>
 
 Review ownership and licensing for any third-party datasets, base models, model conversions, and integration code before distributing a public release. Add a project license once the publication scope and dependency terms have been finalized.
+
+The monochrome Material Design mark is included for visual reference. Source: [Google Material Design logo](https://commons.wikimedia.org/wiki/File:Google_Material_Design_Logo.svg).
+
+</details>

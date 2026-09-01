@@ -1,0 +1,6 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Material Design logo, monochrome</title>
+  <circle cx="12" cy="12" r="12" fill="#111111"/>
+  <path d="M3.6 3.6h16.8v16.8H3.6z" fill="#ffffff"/>
+  <path d="m20.4 3.6-8.4 16.8L3.6 3.6z" fill="#111111"/>
+</svg>
