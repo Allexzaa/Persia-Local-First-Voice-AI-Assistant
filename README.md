@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/persia-banner.png" alt="Persia logo" width="100%">
+  <img src="assets/logo.png" alt="Persia logo" width="220">
 </p>
 
 # Persia - Local-First Voice AI Assistant
